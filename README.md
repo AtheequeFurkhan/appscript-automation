@@ -1,14 +1,15 @@
 # appscript-automation
-Automated data migration with Google Apps Script.
+Open-source Google Apps Script utilities for repeatable data migration and file organization.
 
-## Overview
-This project contains a set of Google Apps Script utilities to automate spreadsheet data cleanup, renaming, sorting, and replacement tasks. It is intended to run in the Apps Script runtime (via the Apps Script editor or `clasp`).
+## Why this repo
+This project is intended as an open, reusable toolkit for automating common Google Drive + Spreadsheet workflows. It favors small, well-scoped scripts that can be copied, adapted, and improved by the community.
 
-## Features
-- Batch rename, remove, and replace sheet data
-- Sorting and ordering helpers
-- Trigger helpers for scheduled runs
-- Modular scripts split by purpose
+## What it does
+- Batch rename, remove, and replace file names
+- Sort and order files by size
+- Generate folders and move files by type or location
+- Track progress via Sheets and long-run batching
+- Schedule jobs with triggers
 
 ## Project Structure
 - [Code.js](Code.js)
@@ -22,11 +23,12 @@ This project contains a set of Google Apps Script utilities to automate spreadsh
 - [Trigger.js](Trigger.js)
 - [appsscript.json](appsscript.json)
 
-## Requirements
-- Google account with access to Apps Script
+## Getting started
+### Requirements
+- Google account with Apps Script access
 - Node.js + `clasp` (optional, for local development)
 
-## Setup (with clasp)
+### Setup (with clasp)
 1. Install clasp globally: `npm i -g @google/clasp`
 2. Login: `clasp login`
 3. Clone the script (already done for this repo): `clasp clone <scriptId>`
@@ -34,14 +36,19 @@ This project contains a set of Google Apps Script utilities to automate spreadsh
 5. Open in Apps Script editor: `clasp open`
 
 ## Usage
-Open the Apps Script editor and run the entry-point functions defined in the scripts. Refer to the individual files for function names and configuration. Typical usage:
-1. Configure spreadsheet IDs, sheet names, and ranges in the relevant script.
-2. Run the main function (e.g., rename/remove/replace/sort entry points).
-3. Set up triggers using helpers in [Trigger.js](Trigger.js).
+1. Configure IDs, sheet names, and ranges in the relevant script.
+2. Run the main function(s) from the Apps Script editor.
+3. For long jobs, run repeatedly or use trigger helpers in [Trigger.js](Trigger.js).
 
-## Notes
-- This project targets the Apps Script runtime, not Node.js.
-- Keep sensitive IDs or keys out of the repository.
+## Contributing
+Contributions are welcome.
+- Open an issue for bugs or ideas.
+- Use small, focused pull requests.
+- Keep scripts modular and documented.
+- Avoid committing secrets or personal IDs.
+
+## Security
+Do not commit credentials, private IDs, or tokens. Use script properties or environment variables when possible.
 
 ## License
 MIT
